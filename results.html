@@ -22,12 +22,6 @@ body {
   font-size: 14px;
 }
 
-.label-first {
-  font-weight: 900;
-  font-size: 1.4em;
-  color: #575757;
-}
-
 .navbar {
   background: #0b6b0b;
   padding: 8px 20px;
@@ -49,6 +43,13 @@ body {
 .student-meta p {
   margin: 5px 0;
   font-size: 18px;
+}
+
+/* First-letter styling for labels */
+.label-first {
+  font-weight: 900;
+  font-size: 1.3em;
+  color: #000;
 }
 
 /* Section headers */
@@ -81,7 +82,8 @@ th {
   padding: 10px;
   border-bottom: 2px solid #aaa;
   text-align: left;
-  color: #008000;
+  color: #0b6b0b;           /* Green header text like the real portal */
+  font-weight: bold;
 }
 
 td {
@@ -99,14 +101,25 @@ td {
   font-weight: normal;
 }
 
-.course {
-  white-space: nowrap;
-}
-
 .comment {
   color: red;
   font-weight: normal;
+  white-space: nowrap;     /* Keeps long comments on one line */
+}
+
+/* No wrapping for Course and Comment columns */
+th:nth-child(4), td:nth-child(4),   /* Course column */
+th:last-child, td:last-child {      /* Comment column */
   white-space: nowrap;
+}
+
+/* Give enough room to long content */
+td:nth-child(4) {                  /* Course */
+  min-width: 300px;
+}
+
+td:last-child {                    /* Comment */
+  min-width: 160px;
 }
 
 /* Footer */
@@ -142,10 +155,11 @@ td {
 <div class="container">
 
   <div class="student-meta">
-  <p><strong>C</strong>omputer number: 2021394867</p>
-  <p><strong>N</strong>ames: JEDAIAH LUKHELE</p>
-  <p><strong>G</strong>ender: M</p>
-</div>
+    <p><span class="label-first">C</span>omputer number: 2021394867</p>
+    <p><span class="label-first">N</span>ames: JEDAIAH LUKHELE</p>
+    <p><span class="label-first">G</span>ender: M</p>
+  </div>
+
   <div class="section-title">
     Continuous Assessment Results [Current Academic Year]
   </div>
@@ -172,7 +186,7 @@ td {
     </thead>
 
     <tbody>
-      <!-- 2ND YEAR -->
+      <!-- 2ND YEAR - Clear Pass example -->
       <tr class="group">
         <td>GER 20231</td>
         <td>BACHELOR OF ARTS - ECONOMICS</td>
@@ -183,7 +197,7 @@ td {
       </tr>
       <tr>
         <td></td><td></td><td></td>
-        <td>ECN 2215 - INTERMEDIATE MICROECONOMICS THEORY </td>
+        <td>ECN 2215 - INTERMEDIATE MICROECONOMICS THEORY</td>
         <td class="grade">C+</td>
         <td></td>
       </tr>
@@ -195,7 +209,7 @@ td {
       </tr>
       <tr>
         <td></td><td></td><td></td>
-        <td>ECN 2342 - APPLIED STATISTIC FOR ECONOMICS </td>
+        <td>ECN 2342 - APPLIED STATISTIC FOR ECONOMICS</td>
         <td class="grade">B</td>
         <td></td>
       </tr>
@@ -212,30 +226,18 @@ td {
         <td></td>
       </tr>
 
-            <!-- 2ND YEAR -->
+      <!-- 2ND YEAR - Withdrawn example -->
       <tr class="group">
         <td>GER 20231</td>
         <td>BACHELOR OF ARTS - ECONOMICS</td>
         <td>2ND YEAR</td>
         <td>ECN 2115 - INTERMEDIATE MICROECONOMICS THEORY</td>
         <td class="grade"></td>
-        <td class="comment">WITHDRAWN WITH PERM</td>
+        <td class="comment">WITHDRAWN WITH PERMISSION</td>
       </tr>
       <tr>
         <td></td><td></td><td></td>
-        <td>ECN 2215 - INTERMEDIATE MICROECONOMICS THEORY </td>
-        <td class="grade"></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td><td></td><td></td>
-        <td>ECN 2331 - STATISTIC THEORY AND TECHNIQUES FOR ECON</td>
-        <td class="grade"></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td><td></td><td></td>
-        <td>ECN 2342 - APPLIED STATISTIC FOR ECONOMICS </td>
+        <td>ECN 2342 - APPLIED STATISTIC FOR ECONOMICS</td>
         <td class="grade">NE</td>
         <td></td>
       </tr>
@@ -252,7 +254,7 @@ td {
         <td></td>
       </tr>
 
-      <!-- 1ST YEAR -->
+      <!-- 1ST YEAR - Proceed and Repeat example -->
       <tr class="group">
         <td>GER 20221</td>
         <td>BACHELOR OF ARTS - ECONOMICS</td>
@@ -274,8 +276,7 @@ td {
         <td></td>
       </tr>
 
-
-      <!-- 1ST YEAR -->
+      <!-- 1ST YEAR - Repeat Year example -->
       <tr class="group">
         <td>GER 20221</td>
         <td>BACHELOR OF ARTS - ECONOMICS</td>
@@ -307,16 +308,15 @@ td {
         <td>DEM 1110 - INTRODUCTION TO DEMOGRAPHY</td>
         <td class="grade">D</td>
         <td></td>
+      </tr>
     </tbody>
   </table>
 
 </div>
 
 <div class="footer">
-  The University of Zambia - Student Information System 2.0.Revision:
+  The University of Zambia - Student Information System 2.0 Revision:
 </div>
 
 </body>
 </html>
-
-
