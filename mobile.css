@@ -1,0 +1,165 @@
+/* Shared phone layout; desktop reference layouts remain in each page. */
+html { -webkit-text-size-adjust: 100%; }
+@media (max-width: 700px) {
+  body { min-width: 0; }
+  .top-header, .topbar { padding-left: max(16px, env(safe-area-inset-left)); padding-right: max(16px, env(safe-area-inset-right)); }
+  .top-header > div, .brand, .brand span { min-width: 0; overflow-wrap: anywhere; }
+  .top-header > div:last-child { line-height: 1.6; }
+  .top-header a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 8px; }
+  .navbar, .navigation { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px 8px; width: auto; }
+  .navbar { padding: 8px 16px; }
+  .navbar a, .navigation a, .navigation button { display: flex; align-items: center; justify-content: flex-start; min-width: 0; min-height: 44px; padding: 8px 10px; margin: 0; font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 1.35; white-space: normal; overflow-wrap: anywhere; text-shadow: none; border-radius: 3px; }
+  .navbar a, .navigation a { background: #ffffff0d; }
+  .navbar a[aria-current="page"] { background: #ffffff26; }
+  .topbar { display: flex; flex-direction: column; align-items: stretch; padding-bottom: 8px; }
+  .brand { width: 100%; font-size: 16px; line-height: 1.4; }
+  .navigation { width: 100%; margin: 0; }
+  .navigation i { flex-shrink: 0; }
+  main { padding: 20px 16px; }
+  .card { min-height: 0; }
+  .login .input-group { height: 46px; margin-bottom: 18px; }
+  .login .input-group span { width: 44px; }
+  .login input { font-size: 16px; }
+  .security { height: 46px; }
+  .refresh { width: 44px; height: 44px; flex-shrink: 0; }
+  .captcha-row { gap: 10px; }
+  .help { max-width: calc(100% - 32px); }
+  .help .close { width: 44px; height: 44px; }
+  .help strong { padding-right: 32px; }
+  .qr-row a { display: inline-flex; align-items: center; min-height: 44px; }
+  .container, .main, .student-info, .sidebar, .results-panel { min-width: 0; }
+  .container { padding-left: 16px; padding-right: 16px; }
+  .cards { display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; margin-left: 0; margin-right: 0; }
+  .cards .green { grid-column: auto; }
+  .main { grid-template-columns: minmax(0, 1fr); }
+  .guide span { min-width: 0; overflow-wrap: anywhere; }
+  .results-scroll { width: 100%; }
+  .scroll-hint { display: block; }
+  .footer { overflow-wrap: anywhere; padding-bottom: max(20px, env(safe-area-inset-bottom)); }
+}
+@media (max-width: 360px) {
+  .navbar a, .navigation a, .navigation button { font-size: 13px; padding-left: 8px; padding-right: 8px; }
+  .student-number { font-size: 24px; }
+  .student-info td { font-size: 13px; }
+}
+
+/* The reference SIS uses a desktop overview for authenticated pages.
+   Their 1000px viewport scales to the phone; pinch zoom remains available. */
+@media (min-width: 701px) and (max-width: 1100px) {
+  .sis-overview .top-header { margin: 0 14px; padding: 4px; font-size: 13px; gap: 8px; }
+  .sis-overview .top-header > div:last-child { font-size: 12px; }
+  .sis-overview .navbar { margin: 0 14px; gap: 0 16px; }
+  .sis-overview .navbar a { font: 15px Arial, Helvetica, sans-serif; min-height: 24px; line-height: 24px; text-shadow: 1px 1px 2px #444; }
+  .sis-overview .container { padding: 60px 5.3% 0; }
+  .sis-overview .cards { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px; margin: 0 18px 60px; }
+  .sis-overview .cards .green { grid-column: auto; min-height: 620px; }
+  .sis-overview .cards .card { font-size: 14px; line-height: 22px; padding: 24px 14px; }
+  .sis-overview .cards h3 { font-size: 14px; }
+  .sis-overview .main { grid-template-columns: minmax(0, 1fr); margin: 0 -40px; }
+  .sis-overview .sidebar { margin: 40px 0 0; }
+  .sis-overview .student-number { font-size: 40px; }
+  .sis-overview .results-panel table { min-width: 0; table-layout: fixed; }
+  .sis-overview .results-panel th { white-space: nowrap; font-size: 13px; }
+  .sis-overview .results-panel td { font-size: 12px; line-height: 1.6; overflow-wrap: normal; word-break: normal; }
+  .sis-overview .results-panel .comment { white-space: normal; }
+  .sis-overview .results-panel th:nth-child(1) { width: 14%; }
+  .sis-overview .results-panel th:nth-child(2) { width: 22%; }
+  .sis-overview .results-panel th:nth-child(3) { width: 13%; }
+  .sis-overview .results-panel th:nth-child(4) { width: 30%; }
+  .sis-overview .results-panel th:nth-child(5) { width: 7%; }
+  .sis-overview .results-panel th:nth-child(6) { width: 14%; }
+  .sis-overview .scroll-hint { display: none; }
+}
+.menu-toggle, .login-notice { display: none; }
+@media (max-width: 700px) {
+  .topbar { flex-direction: row; flex-wrap: wrap; align-items: center; justify-content: space-between; padding: 0 16px; min-height: 58px; gap: 0; }
+  .brand { width: auto; }
+  .brand span { display: none; }
+  .brand img { width: 46px; height: 58px; }
+  .menu-toggle { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 5px; width: 44px; height: 44px; padding: 8px; border: 0; background: transparent; cursor: pointer; }
+  .menu-toggle span { display: block; width: 26px; height: 2px; background: #ddd; border-radius: 2px; }
+  .navigation { display: none; flex-basis: 100%; padding: 8px 0; }
+  .navigation.is-open { display: grid; }
+  .login-notice { display: block; position: relative; margin-top: 14px; padding: 16px 40px 16px 17px; background: #fcf8e3; color: #8a7a50; border: 1px solid #faebcc; line-height: 24px; font-size: 16px; }
+  .login-notice[hidden] { display: none; }
+  .login-notice button { position: absolute; right: 4px; top: 5px; border: 0; background: transparent; color: #c9c4b0; font-size: 24px; width: 44px; height: 44px; }
+  main { padding: 46px 0 58px; }
+  .card { width: 100%; max-width: 100%; border-radius: 125px 0 125px 0; padding: 12px 0 44px; }
+  .login, .right { padding: 30px 8.3% 0; }
+  .login h2, .right h2 { font-size: 20px; font-weight: 600; line-height: 1.4; }
+  .login h2 { margin-bottom: 20px; }
+  .login h3 { font-size: 28px; font-weight: 600; margin-bottom: 24px; }
+  .login .input-group { height: 40px; margin-bottom: 22px; }
+  .login .input-group span { width: 56px; }
+  .login .input-group input { background: white; padding-left: 14px; }
+  .security { height: 40px; padding-left: 14px; margin-bottom: 22px; }
+  .captcha-row { margin: 24px 0; gap: 5px; }
+  .refresh { width: 36px; height: 36px; }
+  .action { min-height: 40px; padding: 9px 8px; }
+  .forgot { margin-top: 14px; }
+  .account { margin-top: 16px; padding-top: 22px; }
+  .right { margin-top: 0; }
+  .right:before { display: none; }
+  .right p { font-size: 16px; line-height: 24px; margin-bottom: 24px; }
+  .right h2 { margin-bottom: 12px; }
+  .accommodation { margin-top: 30px; }
+  .help { display: none; }
+  .footer { font-size: 13px; line-height: 22px; }
+}
+
+/* Consistent navigation type and complete words in the results table. */
+.navbar a, .navigation a, .navigation button { font-family: Arial, Helvetica, sans-serif; text-shadow: none; }
+.sis-overview .navbar a { text-shadow: none; }
+.results-panel th { white-space: nowrap; overflow-wrap: normal; word-break: normal; font-size: 14px; }
+.results-panel td { overflow-wrap: normal; word-break: normal; }
+.results-panel th:nth-child(1) { width: 14%; }
+.results-panel th:nth-child(2) { width: 22%; }
+.results-panel th:nth-child(3) { width: 13%; }
+.results-panel th:nth-child(4) { width: 30%; }
+.results-panel th:nth-child(5) { width: 7%; }
+.results-panel th:nth-child(6) { width: 14%; }
+.results-panel td:nth-child(1), .results-panel td:nth-child(3), .results-panel .grade, .results-panel .comment { white-space: nowrap; }
+
+/* The final three services sit below the green navigation band. */
+.secondary-nav { display: flex; flex-wrap: wrap; gap: 0 18px; margin: 0 18px; padding: 2px 6px; background: white; }
+.secondary-nav a { display: inline-flex; align-items: center; color: #555; font: 16px Arial, Helvetica, sans-serif; line-height: 24px; text-decoration: none; }
+.secondary-nav a:focus-visible { outline: 2px solid #dfa134; outline-offset: 3px; }
+/* Override compact-layout rules too, so headers cannot split. */
+.sis-overview .results-panel th { white-space: nowrap; overflow-wrap: normal; word-break: normal; }
+.sis-overview .results-panel th:nth-child(5) { width: 9%; }
+.sis-overview .results-panel th:nth-child(4) { width: 28%; }
+.sis-overview .results-panel th:nth-child(5), .sis-overview .results-panel td:nth-child(5) { white-space: nowrap; overflow-wrap: normal; word-break: normal; }
+@media (min-width: 701px) and (max-width: 1100px) {
+  .secondary-nav { margin: 0 14px; gap: 0 16px; }
+  .secondary-nav a { font-size: 15px; }
+}
+@media (max-width: 700px) {
+  .secondary-nav { margin: 0; padding: 4px 16px; gap: 0 16px; }
+  .secondary-nav a { min-height: 44px; font-size: 13px; }
+}
+
+/* Match both navigation rows, with a light shadow behind the labels. */
+.navbar a, .sis-overview .navbar a, .secondary-nav a {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+}
+@media (min-width: 701px) and (max-width: 1100px) {
+  .navbar a, .sis-overview .navbar a, .secondary-nav a { font-size: 15px; }
+}
+@media (max-width: 700px) {
+  .navbar a, .sis-overview .navbar a, .secondary-nav a { font-size: 13px; }
+}
+
+.navbar a, .sis-overview .navbar a, .secondary-nav a {
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+/* Full-width student details after removing the quick guides. */
+.sis-overview .dashboard-details { grid-template-columns: minmax(0, 1fr); }
+.navbar a, .sis-overview .navbar a, .secondary-nav a {
+  text-shadow: 0 1px 1px #333, 1px 2px 2px rgba(0, 0, 0, 0.85);
+}
